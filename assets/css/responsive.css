@@ -1,0 +1,48 @@
+@media all and (max-width: 767px) {
+  .input-items,
+  .footer {
+    flex-wrap: wrap;
+  }
+  .footer {
+    justify-content: center;
+    gap: 20px;
+  }
+  .w-50 {
+    width: 100%;
+  }
+  .form-card-inner {
+    padding: 25px;
+  }
+  .form-card-inner h4 {
+    font-size: 24px;
+  }
+  .logo {
+    width: 115px;
+  }
+  .input-item input,
+  .input-item button {
+    padding: 14px 20px;
+    font-size: 15px;
+
+    padding-left: 55px;
+  }
+  .input-item button{
+    padding-left: 0;
+  }
+  p {
+    font-size: 15px;
+    line-height: 28px;
+  }
+  .hash-text{
+    font-size: 15px;
+  }
+  .hash-link {
+    padding: 14px;
+}
+}
+
+@media (max-width: 576px) {
+  .hash-text {
+    max-width: 370px;
+  }
+}

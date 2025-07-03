@@ -22,30 +22,38 @@
 
   <body>
     <div class="circle circle-1">
-      <img src="assets/images/eth.png" alt="icon" />
+      <img src="assets/images/ecm-3.png" alt="icon" />
     </div>
     <div class="circle circle-2">
       <img src="assets/images/ecm.png" alt="icon" />
     </div>
 
     <div class="circle circle-4">
-      <img src="assets/images/eth.png" alt="icon" />
+      <img src="assets/images/ecm-3.png" alt="icon" />
     </div>
 
     <div class="circle circle-7">
       <img src="assets/images/ecm-3.png" alt="icon" />
     </div>
     <div class="circle circle-8">
-      <img src="assets/images/eth.png" alt="icon" />
+      <img src="assets/images/ecm.png" alt="icon" />
     </div>
     <div class="circle circle-9">
       <img src="assets/images/ecm-2.png" alt="icon" />
     </div>
     <header class="header-area">
-      <div class="logo">
-        <a href="https://ecmcoin.com/"
-          ><img src="assets/images/logo.png" alt="logo"
-        /></a>
+      <div class="logo-container d-flex align-items-center">
+        <div class="logo logo-1">
+          <a href="https://ecmcoin.com/">
+            <img src="assets/images/logo.png" alt="logo" />
+          </a>
+        </div>
+        <div class="logo logo-2">
+          <a href="https://andromarkets.png">
+            <img src="assets/images/andromarkets.png" alt="logo" />
+          </a>
+        </div>
+        <div class="transfer-coin-box" id="coin-box"></div>
       </div>
     </header>
     <section class="form-card-section">
@@ -184,6 +192,32 @@
         });
       }
       startFloating();
+    </script>
+    <script>
+      const coinBox = document.getElementById("coin-box");
+      const coinImages = [
+        "assets/images/ecm.png",
+        "assets/images/ecm-3.png",
+        "assets/images/ecm-2.png",
+      ];
+
+      let coinIndex = 0;
+
+      function launchCoin() {
+        const coin = document.createElement("img");
+        coin.src = coinImages[coinIndex % coinImages.length];
+        coin.classList.add("coin");
+
+        coinBox.appendChild(coin);
+
+        coin.addEventListener("animationend", () => {
+          coin.remove();
+        });
+
+        coinIndex++;
+      }
+
+      setInterval(launchCoin, 500); // Every 0.5s a coin launches
     </script>
   </body>
 </html>

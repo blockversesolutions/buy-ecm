@@ -26,19 +26,19 @@
 
     padding-left: 55px;
   }
-  .input-item button{
+  .input-item button {
     padding-left: 0;
   }
   p {
     font-size: 15px;
     line-height: 28px;
   }
-  .hash-text{
+  .hash-text {
     font-size: 15px;
   }
   .hash-link {
     padding: 14px;
-}
+  }
 }
 
 @media (max-width: 576px) {

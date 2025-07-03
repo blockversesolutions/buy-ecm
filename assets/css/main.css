@@ -60,10 +60,21 @@ p {
 }
 
 body {
-  background: url("../images/bg-1.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background: #010f22;
   height: 100vh;
+  position: relative;
+}
+body:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+  background: url("../images/shape.svg");
+  background-size: cover;
+  z-index: -2;
+  opacity: 0.39;
 }
 .form-card-section {
   margin-bottom: 142px;
@@ -127,7 +138,7 @@ body {
   align-items: center;
   display: flex;
 }
-.input-item input:focus{
+.input-item input:focus {
   color: #fff !important;
 }
 .input-item button {
@@ -141,6 +152,7 @@ body {
   background-clip: padding-box;
   position: relative;
   height: 100%;
+  transition: 0.5s;
 }
 
 .border-gradient:after {
@@ -333,4 +345,106 @@ body {
 
 .hash-link:hover .hash-icon i {
   transform: rotate(0);
+}
+.circle {
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  z-index: -2;
+  filter: blur(1px);
+  animation: float 10s ease-in-out infinite alternate;
+}
+
+/* Add slight variations for each circle */
+.circle-1 {
+  background-color: rgba(224, 115, 30, 0.4);
+  height: 60px;
+  width: 60px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.circle-2 {
+  background-color: rgba(32, 57, 201, 0.4);
+  top: 80%;
+  left: 30%;
+  animation-delay: 1s;
+}
+
+.circle-3 {
+  background-color: rgba(247, 176, 24, 0.4);
+  right: 10%;
+  top: 30%;
+  animation-delay: 2s;
+  height: 80px;
+  width: 80px;
+}
+
+.circle-4 {
+  background-color: rgba(247, 176, 24, 0.4);
+  right: 20%;
+  top: 40%;
+  animation-delay: 3s;
+  height: 40px;
+  width: 40px;
+}
+
+.circle-5 {
+  background-color: rgba(100, 22, 201, 0.4);
+  right: 50%;
+  bottom: 10%;
+  animation-delay: 1.5s;
+}
+
+.circle-6 {
+  background-color: rgba(197, 170, 18, 0.2);
+  right: 10%;
+  bottom: 10%;
+  animation-delay: 2.5s;
+}
+
+.circle-7 {
+  background-color: rgba(79, 139, 252, 0.8);
+  right: 10%;
+  top: 10%;
+  animation-delay: 0.7s;
+  height: 30px;
+  width: 30px;
+}
+
+.circle-8 {
+  background-color: rgba(148, 150, 25, 0.8);
+  left: 10%;
+  bottom: 10%;
+  animation-delay: 3.3s;
+}
+.circle-9 {
+  background-color: rgba(7, 62, 145, 0.8);
+  left: 10%;
+  top: 10%;
+  height: 35px;
+  width: 35px;
+  animation-delay: 4.3s;
+}
+
+/* Shared animation keyframe */
+@keyframes float {
+  0% {
+    transform: translate(0px, 0px);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translate(150px, -300px);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(10px, -100px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-15px, 15px);
+    opacity: 0.5;
+  }
 }

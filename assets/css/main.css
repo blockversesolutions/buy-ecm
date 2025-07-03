@@ -80,7 +80,7 @@ body:after {
   margin-bottom: 142px;
 }
 .logo {
-  width: 180px;
+  width: 160px;
   margin: 0 auto;
 }
 .logo img {
@@ -113,6 +113,7 @@ body:after {
   );
   backdrop-filter: blur(10px);
   border: 1.5px solid #6902e733;
+  padding-bottom: 30px;
 }
 .form-card-inner h4 {
   text-align: center;
@@ -253,8 +254,8 @@ body:after {
   gap: 15px;
 }
 .social-menu li a {
-  height: 42px;
-  width: 42px;
+  height:40px;
+  width: 40px;
   display: flex;
   align-items: center;
   color: #fff;
@@ -284,7 +285,7 @@ body:after {
     rgba(255, 255, 255, 0) 100%
   );
   backdrop-filter: blur(20px);
-  padding: 20px 0;
+  padding:15px 0;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -348,84 +349,81 @@ body:after {
 }
 .circle {
   position: absolute;
-  height: 120px;
-  width: 120px;
+
   border-radius: 50%;
   z-index: -2;
-  filter: blur(1px);
+
   animation: float 10s ease-in-out infinite alternate;
 }
 
 /* Add slight variations for each circle */
 .circle-1 {
-  background-color: rgba(224, 115, 30, 0.4);
-  height: 60px;
-  width: 60px;
+
   top: 10%;
   left: 10%;
   animation-delay: 0s;
 }
 
+.circle-9 img{
+  height: 40px;
+  width: 40px;
+}
 .circle-2 {
-  background-color: rgba(32, 57, 201, 0.4);
+
   top: 80%;
   left: 30%;
   animation-delay: 1s;
 }
 
 .circle-3 {
-  background-color: rgba(247, 176, 24, 0.4);
+
   right: 10%;
   top: 30%;
   animation-delay: 2s;
-  height: 80px;
-  width: 80px;
+
 }
 
 .circle-4 {
-  background-color: rgba(247, 176, 24, 0.4);
+
   right: 20%;
   top: 40%;
   animation-delay: 3s;
-  height: 40px;
-  width: 40px;
+
 }
 
 .circle-5 {
-  background-color: rgba(100, 22, 201, 0.4);
+
   right: 50%;
   bottom: 10%;
   animation-delay: 1.5s;
 }
 
 .circle-6 {
-  background-color: rgba(197, 170, 18, 0.2);
+  
   right: 10%;
   bottom: 10%;
   animation-delay: 2.5s;
 }
 
 .circle-7 {
-  background-color: rgba(79, 139, 252, 0.8);
+ 
   right: 10%;
   top: 10%;
   animation-delay: 0.7s;
-  height: 30px;
-  width: 30px;
+
 }
 
 .circle-8 {
-  background-color: rgba(148, 150, 25, 0.8);
+
   left: 10%;
   bottom: 10%;
   animation-delay: 3.3s;
 }
 .circle-9 {
-  background-color: rgba(7, 62, 145, 0.8);
+
   left: 10%;
   top: 10%;
-  height: 35px;
-  width: 35px;
+
   animation-delay: 4.3s;
 }
 

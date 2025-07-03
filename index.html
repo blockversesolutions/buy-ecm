@@ -27,18 +27,11 @@
     <div class="circle circle-2">
       <img src="assets/images/ecm.png" alt="icon" />
     </div>
-    <div class="circle circle-3">
-      <img src="assets/images/eth.png" alt="icon" />
-    </div>
+
     <div class="circle circle-4">
       <img src="assets/images/eth.png" alt="icon" />
     </div>
-    <div class="circle circle-5">
-      <img src="assets/images/eth.png" alt="icon" />
-    </div>
-    <div class="circle circle-6">
-      <img src="assets/images/ecm-3.png" alt="icon" />
-    </div>
+
     <div class="circle circle-7">
       <img src="assets/images/ecm-3.png" alt="icon" />
     </div>
@@ -172,5 +165,25 @@
         </div>
       </div>
     </footer>
+    <script>
+      const circles = document.querySelectorAll(".circle");
+      function randomPosition(element) {
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const randomX = Math.random() * (windowWidth - 50);
+        const randomY = Math.random() * (windowHeight - 50);
+        element.style.left = `${randomX}px`;
+        element.style.top = `${randomY}px`;
+      }
+      function startFloating() {
+        circles.forEach((circle) => {
+          randomPosition(circle);
+          setInterval(() => {
+            randomPosition(circle);
+          }, 6000 + Math.random() * 2000);
+        });
+      }
+      startFloating();
+    </script>
   </body>
 </html>

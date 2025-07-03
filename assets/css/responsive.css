@@ -1,4 +1,12 @@
+@media all and (max-width: 991px) {
+  .transfer-coin-box {
+    left: 16%;
+  }
+}
 @media all and (max-width: 767px) {
+  .transfer-coin-box {
+    top: 26%;
+  }
   .input-items,
   .footer {
     flex-wrap: wrap;
@@ -42,19 +50,16 @@
 }
 
 @media (max-width: 576px) {
-  .logo img {
-    width: 80%;
-  }
-  .transfer-coin-box img {
-    width: 25px;
-  }
-  .logo-1 {
-    margin-left: -16px;
-  }
-  .logo-2 {
-    margin-right: -16px;
-  }
   .hash-text {
     max-width: 370px;
+  }
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin: inherit !important;
+  }
+  .logo-container {
+    margin: 0;
+    justify-content: space-between;
   }
 }

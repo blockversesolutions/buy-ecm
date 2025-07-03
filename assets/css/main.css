@@ -78,10 +78,13 @@ body:after {
 }
 .form-card-section {
   margin-bottom: 142px;
+  margin-top: 40px;
 }
 .logo {
   width: 160px;
   margin: 0 auto;
+  height: 160px;
+  border-radius: 50%;
 }
 .logo img {
   width: 100%;
@@ -398,31 +401,38 @@ body:after {
 
 .logo-container {
   position: relative;
-  max-width: 800px;
+  max-width: 1000px;
+
   margin: 0 auto;
 }
-
+.logo {
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  background-color: #010f22;
+  position: relative;
+  z-index: 2;
+}
+.header-area {
+  background-color: #010f22;
+}
 .transfer-coin-box {
   position: absolute;
-  top: 50%;
-  left: -130px;
-  transform: translateY(-50%);
-  width: 100%;
-  height: 0%;
-  pointer-events: none;
+  top: 38%;
+  left: 30%;
 
+  width: 100%;
+  height: 0;
+  pointer-events: none;
   overflow: visible;
 }
 
 .coin {
   position: absolute;
-  width: 30px;
   top: 0;
   left: 0;
-  right: 0;
-  margin: 0 auto;
   opacity: 0;
-  animation: moveJump 2.9s linear forwards;
+  animation: none; /* Will be set in JS */
 }
 
 /* Jumping transfer animation */
@@ -450,7 +460,4 @@ body:after {
     transform: translate(300px, 0);
     opacity: 0;
   }
-}
-.transfer-coin-box img {
-  width: 35px;
 }

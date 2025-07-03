@@ -195,29 +195,64 @@
     </script>
     <script>
       const coinBox = document.getElementById("coin-box");
+      const logo1 = document.querySelector(".logo-1");
+      const logo2 = document.querySelector(".logo-2");
+
       const coinImages = [
-        "assets/images/ecm.png",
+        "assets/images/eth.png",
         "assets/images/ecm-3.png",
-        "assets/images/ecm-2.png",
+        "assets/images/eth.png",
       ];
 
       let coinIndex = 0;
+      let animationCounter = 0;
 
       function launchCoin() {
         const coin = document.createElement("img");
         coin.src = coinImages[coinIndex % coinImages.length];
         coin.classList.add("coin");
 
+        // ✅ Random size: super small (8px) to large (50px)
+        const randomSize = Math.floor(Math.random() * (50 - 20 + 1)) + 20;
+        coin.style.width = `${randomSize}px`;
+
+        // ✅ Measure distance between logo-1 and logo-2
+        const logo1Rect = logo1.getBoundingClientRect();
+        const logo2Rect = logo2.getBoundingClientRect();
+        const distance = logo2Rect.left - logo1Rect.left;
+
+        // ✅ Unique animation name
+        const animationName = `moveJump${animationCounter++}`;
+
+        // ✅ Create jump keyframes with dynamic distance
+        const styleSheet = document.createElement("style");
+        styleSheet.innerHTML = `
+      @keyframes ${animationName} {
+        0%   { transform: translate(0, 0);       opacity: 0; }
+        10%  { opacity: 1; }
+        25%  { transform: translate(${distance * 0.25}px, -10px); }
+        50%  { transform: translate(${distance * 0.5}px, 10px); }
+        75%  { transform: translate(${distance * 0.75}px, -10px); }
+        100% { transform: translate(${distance}px, 0); opacity: 0; }
+      }
+    `;
+        document.head.appendChild(styleSheet);
+
+        // ✅ Apply animation
+        coin.style.animation = `${animationName} 2.6s linear forwards`;
         coinBox.appendChild(coin);
 
+        // ✅ Clean up after animation ends
         coin.addEventListener("animationend", () => {
           coin.remove();
+          styleSheet.remove();
         });
 
         coinIndex++;
       }
 
-      setInterval(launchCoin, 500); // Every 0.5s a coin launches
+      // ⏱️ Run every 400ms for denser flow
+      setInterval(launchCoin, 500);
     </script>
   </body>
 </html>

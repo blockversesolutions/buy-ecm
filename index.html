@@ -212,19 +212,19 @@
         coin.src = coinImages[coinIndex % coinImages.length];
         coin.classList.add("coin");
 
-        // ✅ Random size: super small (8px) to large (50px)
+        // Random size: super small (8px) to large (50px)
         const randomSize = Math.floor(Math.random() * (50 - 20 + 1)) + 20;
         coin.style.width = `${randomSize}px`;
 
-        // ✅ Measure distance between logo-1 and logo-2
+        // Measure distance between logo-1 and logo-2
         const logo1Rect = logo1.getBoundingClientRect();
         const logo2Rect = logo2.getBoundingClientRect();
         const distance = logo2Rect.left - logo1Rect.left;
 
-        // ✅ Unique animation name
+        // Unique animation name
         const animationName = `moveJump${animationCounter++}`;
 
-        // ✅ Create jump keyframes with dynamic distance
+        // Create jump keyframes with dynamic distance
         const styleSheet = document.createElement("style");
         styleSheet.innerHTML = `
       @keyframes ${animationName} {
@@ -238,11 +238,11 @@
     `;
         document.head.appendChild(styleSheet);
 
-        // ✅ Apply animation
+        // Apply animation
         coin.style.animation = `${animationName} 2.6s linear forwards`;
         coinBox.appendChild(coin);
 
-        // ✅ Clean up after animation ends
+        // Clean up after animation ends
         coin.addEventListener("animationend", () => {
           coin.remove();
           styleSheet.remove();
@@ -250,8 +250,6 @@
 
         coinIndex++;
       }
-
-      // ⏱️ Run every 400ms for denser flow
       setInterval(launchCoin, 500);
     </script>
   </body>
